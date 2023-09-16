@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-700 font-Merriweather">
+    <div class="container pw-full max-w-xl mx-auto p-16 my-24 bg-white">
+        <div class="mb-4">
+            <button class="tab-btn active mr-6 text-blue-700" data-tab="Registrasi" onclick="openTab('Registrasi')">Registrasi</button>
+            <button id="listPendaftarBtn" class="tab-btn mr-6" data-tab="ListPendaftar" onclick="openTab('ListPendaftar')">List Pendaftar</button>
+        </div>
+        
+        
+
+        <div id="Registrasi" class="tab-content py-3">
+            <h2 class="text-xl font-semibold mb-5 ">Form Registrasi</h2>
+            <form id="registrationForm" class="mb-4">
+                <div class="mb-2">
+                    <label for="nama" class="block mb-2">Nama</label>
+                    <input type="text" id="nama" name="nama" class="border rounded px-2 py-1 w-full mb-4" required minlength="10">
+                </div>
+
+                <div class="mb-4">
+                    <label for="umur" class="block mb-2">Umur</label>
+                    <input type="number" id="umur" name="umur" class="border rounded px-2 py-1 w-full mb-4" required min="25">
+                </div>
+
+                <div class="mb-4">
+                    <label for="uang" class="block mb-2">Uang Sangu (100 ribu - 1 juta):</label>
+                    <input type="number" id="uang" name="uang" class="border rounded w-full" required min="100000" max="1000000">
+                    <span id="uang-rupiah" class="text-gray-600"></span>
+                </div>
+                
+
+                <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded " onclick="submitForm()">Submit</button>
+            </form>
+        </div>
+
+        <div id="ListPendaftar" class="tab-content hidden">
+            <h2 class="font-semibold text-sm mb-4">List Pendaftar</h2>
+            <table class="min-w-full text-left text-sm font-light">
+                <thead class="border-b font-medium dark:border-neutral-500">
+                    <tr class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600 text-center">
+                        <td class="border px-4 py-2">No</td>
+                        <td class="border px-4 py-2">Nama</td>
+                        <td class="border px-4 py-2">Umur</td>
+                        <td class="border px-4 py-2">Uang Sangu</td>
+                    </tr>
+                </thead>
+                <tbody id="pendaftarData">
+                </tbody>
+            </table>
+            <p id="resume" class="mt-4 font-semibold text-xs"></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="script.js"></script>
+</body>
+</html>
