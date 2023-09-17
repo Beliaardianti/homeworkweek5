@@ -55,7 +55,7 @@ function isValidData(nama, umur, uang) {
         return false;
     }
     if (uang < 100000 || uang > 1000000) {
-        alert("Uang saku harus antara 100 ribu dan 1 juta.");
+        alert("Uang saku antara 100 ribu dan 1 juta.");
         return false;
     }
     return true;
